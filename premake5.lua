@@ -5,9 +5,12 @@ project "msdf-atlas-gen"
 	language "C++"
 	cppdialect "C++17"
     staticruntime "off"
+	
+	architecture "x86_64"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	targetdir "Build/%{cfg.buildcfg}/%{prj.name}"
+		objdir "Intermediates/%{cfg.buildcfg}/%{prj.name}"
 
 	files
 	{
